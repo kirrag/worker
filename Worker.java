@@ -11,11 +11,7 @@ public class Worker {
 	public void start() {
 		for (int i = 0; i < 100; i++) {
 			if (i == 33 ) {
-				try {
-					errorCallback.onError();
-				} catch (Exception e ) {
-					System.out.println("Task returned Error: " + e);
-				}
+				errorCallback.onError("Task " + i + " is error");
 			} else {
 		       	callback.onDone("Task " + i + " is done");
 			}
